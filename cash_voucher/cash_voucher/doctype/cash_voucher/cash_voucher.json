@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CV-JRN-.YY.-.#####",
+ "creation": "2025-09-17 18:03:42.056237",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ppua",
+  "amended_from",
+  "party_type",
+  "column_break_tvrn",
+  "party",
+  "company",
+  "voucher_details_section",
+  "voucher",
+  "section_break_llgd",
+  "column_break_oljv",
+  "total_amount",
+  "approvel_section_section",
+  "first_approver",
+  "second_approver",
+  "third_approver",
+  "column_break_pac2",
+  "fourth_approver",
+  "fifth_approver"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ppua",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cash Voucher",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Link",
+   "label": "Party Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "voucher_details_section",
+   "fieldtype": "Section Break",
+   "label": "Voucher Details"
+  },
+  {
+   "fieldname": "voucher",
+   "fieldtype": "Table",
+   "label": "Voucher",
+   "options": "Cash Voucher Item"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "label": "Party",
+   "options": "party_type"
+  },
+  {
+   "fieldname": "column_break_tvrn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_oljv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_llgd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "approvel_section_section",
+   "fieldtype": "Section Break",
+   "label": "Approvel Section"
+  },
+  {
+   "fieldname": "first_approver",
+   "fieldtype": "Link",
+   "label": "First Appover",
+   "options": "User"
+  },
+  {
+   "fieldname": "second_approver",
+   "fieldtype": "Link",
+   "label": "Second Approver",
+   "options": "User"
+  },
+  {
+   "fieldname": "third_approver",
+   "fieldtype": "Link",
+   "label": "Third Approver",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_pac2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fourth_approver",
+   "fieldtype": "Link",
+   "label": "Fourth Approver",
+   "options": "User"
+  },
+  {
+   "fieldname": "fifth_approver",
+   "fieldtype": "Link",
+   "label": "Fifth Approver",
+   "options": "User"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-18 13:59:48.867886",
+ "modified_by": "Administrator",
+ "module": "Cash Voucher",
+ "name": "Cash Voucher",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
