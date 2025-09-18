@@ -44,7 +44,7 @@ class CashVoucher(Document):
 		je.save(ignore_permissions=True)
 		je.submit()
 	
-	def share_document(self):
+	def share_documents(self):
 		if not self.first_approver:
 			return 
 
