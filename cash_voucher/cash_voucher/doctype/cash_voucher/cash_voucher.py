@@ -4,10 +4,25 @@
 import frappe
 from frappe.model.document import Document
 from frappe.utils import getdate
+from frappe import _
 
 class CashVoucher(Document):
-	def before_save(self):
-		self.share_document()
+	# def before_save(self):
+	# 	self.share_document()
+
+	def validate(self):
+		seen = {}
+		today = getdate()
+
+		for idx, row in enumerate(self.voucher, start=1):
+			if row.voucher_type in seen:
+				frappe.throw(_("Voucher Type {0} is duplicate in row {1}").format(row.voucher_type, idx))
+			else:
+				seen[row.voucher_type] = idx
+
+			if row.voucher_date and getdate(row.voucher_date) > today:
+				frappe.throw(_("Voucher Date {0} in row {1} cannot be greater than today").format(row.voucher_date, idx))
+
 
 	def before_submit(self):
 		je = frappe.new_doc("Journal Entry")
@@ -43,8 +58,8 @@ class CashVoucher(Document):
 
 		je.save(ignore_permissions=True)
 		je.submit()
-	
-	def share_documents(self):
+
+	def share_document(self):
 		if not self.first_approver:
 			return 
 
@@ -58,4 +73,3 @@ class CashVoucher(Document):
 			share = 1,
 			notify = 1
 		)
-

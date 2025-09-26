@@ -9,12 +9,14 @@
   "section_break_ppua",
   "amended_from",
   "party_type",
+  "party_name",
   "column_break_tvrn",
   "party",
   "company",
   "voucher_details_section",
   "voucher",
   "section_break_llgd",
+  "journal_entry",
   "column_break_oljv",
   "total_amount",
   "approvel_section_section",
@@ -44,7 +46,8 @@
    "fieldname": "party_type",
    "fieldtype": "Link",
    "label": "Party Type",
-   "options": "DocType"
+   "options": "DocType",
+   "reqd": 1
   },
   {
    "fieldname": "voucher_details_section",
@@ -55,13 +58,15 @@
    "fieldname": "voucher",
    "fieldtype": "Table",
    "label": "Voucher",
-   "options": "Cash Voucher Item"
+   "options": "Cash Voucher Item",
+   "reqd": 1
   },
   {
    "fieldname": "party",
    "fieldtype": "Dynamic Link",
    "label": "Party",
-   "options": "party_type"
+   "options": "party_type",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_tvrn",
@@ -127,13 +132,25 @@
    "fieldtype": "Link",
    "label": "Fifth Approver",
    "options": "User"
+  },
+  {
+   "fieldname": "party_name",
+   "fieldtype": "Data",
+   "label": "Party Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "Journal Entry",
+   "options": "Journal Entry"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-18 13:59:48.867886",
+ "modified": "2025-09-19 12:07:09.483805",
  "modified_by": "Administrator",
  "module": "Cash Voucher",
  "name": "Cash Voucher",
