@@ -21,7 +21,7 @@ class CashVoucher(Document):
 				seen[row.voucher_type] = idx
 
 			if row.voucher_date and getdate(row.voucher_date) > today:
-				frappe.throw(_("Voucher Date {0} in row {1} cannot be greater than today bhavesh").format(row.voucher_date, idx))
+				frappe.throw(_("Voucher Date {0} in row {1} cannot be greater than today ").format(row.voucher_date, idx))
 
 
 	def before_submit(self):
